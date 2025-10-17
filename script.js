@@ -4,7 +4,7 @@ function login() {
 
   if (user && pass) {
     localStorage.setItem("usuario", user);
-    window.location.href = "index.html";
+    window.location.href = "login.html";
     return false;
   } else {
     alert("Preencha todos os campos!");
