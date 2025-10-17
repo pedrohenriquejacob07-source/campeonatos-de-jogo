@@ -1,0 +1,11 @@
+name: 🌒 Deploy & Quality 
+
+on:
+push:
+ -main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write 
+
