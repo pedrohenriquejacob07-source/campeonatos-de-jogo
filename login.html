@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Campeonato de Jogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+  <div class="login-container">
+    <h2>🏆 Login – Campeonato de Jogo</h2>
+    <form onsubmit="return login()">
+      <label for="user">Usuário:</label>
+      <input type="text" id="user" required>
+
+      <label for="pass">Senha:</label>
+      <input type="password" id="pass" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="msg">Use qualquer nome e senha para acessar (simulação).</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
