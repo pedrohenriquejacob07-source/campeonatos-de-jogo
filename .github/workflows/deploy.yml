@@ -4,11 +4,17 @@ on:
  branches:
    push:
      - main
+   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write 
+
+
+concurrency:
+ group: ${{ github.workflow }}-${{ github.ref }}
+ cancel-in-progress: true
 
 jobs:
   deploy:
@@ -18,6 +24,22 @@ jobs:
     outputs:
       page_url: ${{steps.deployment.outputs.page_url }}
 
-     environment:
+    environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }} 
+      steps:
+       - name: 🏒 checkout code
+         uses: action/checkout@v4
+         
+         -name: ®️ setup pages
+         uses: actions/configure-pages@v4
+
+       - name: 🆎 upload artifact 
+         uses: actions/upload-pages-artifact@v3
+         with:
+          path: "."
+          
+       - name: 🆚 deplay to Github pages
+         id: deplayment 
+         uses: actions/deplay-pages@v4
+        

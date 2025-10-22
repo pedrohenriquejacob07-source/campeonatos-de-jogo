@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo Clicker Divertido</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>🎮 Jogo Clicker</h1>
-    <nav id="menu">
-      <ul>
-        <li><button onclick="mostrarTela('jogo')">Iniciar Jogo</button></li>
-        <li><button onclick="mostrarTela('instrucoes')">Como Jogar</button></li>
-        <li><button onclick="mostrarTela('creditos')">Créditos</button></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <div id="menu">
+      <h1>Jogo de Adivinhação</h1>
+      <button onclick="startGame()">Jogar</button>
+      <button onclick="showInstructions()">Instruções</button>
+      <button onclick="exitGame()">Sair</button>
+    </div>
 
-  <main>
-    <section id="jogo" class="tela">
-      <h2>Clique no botão abaixo o máximo que puder!</h2>
-      <button id="clickButton">Clique Aqui!</button>
-      <p>Pontuação: <span id="pontuacao">0</span></p>
-    </section>
+    <div id="game">
+      <h2>Tente adivinhar o número (1 a 100)</h2>
+      <input type="number" id="guessInput" placeholder="Digite seu palpite" min="1" max="100" />
+      <button onclick="checkGuess()">Enviar Palpite</button>
+      <p class="message" id="gameMessage"></p>
+      <button class="back-button" onclick="backToMenu()">Voltar ao Menu</button>
+    </div>
 
-    <section id="instrucoes" class="tela oculto">
+    <div id="instructions">
       <h2>Como Jogar</h2>
-      <p>É simples! Clique no botão para ganhar pontos. Tente bater seu recorde!</p>
-    </section>
-
-    <section id="creditos" class="tela oculto">
-      <h2>Créditos</h2>
-      <p>Desenvolvido por Você 😎</p>
-      <p>Feito com HTML, CSS e JavaScript</p>
-    </section>
-  </main>
+      <p>O jogo escolhe um número aleatório entre 1 e 100. Tente adivinhar com o menor número de tentativas possível.</p>
+      <button class="back-button" onclick="backToMenu()">Voltar ao Menu</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-

@@ -1,52 +1,66 @@
-body {
+* {
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background-color: #282c34;
-  color: #fff;
-  text-align: center;
+}
+
+body {
   margin: 0;
   padding: 0;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-header {
-  background-color: #1f2227;
-  padding: 20px;
+.container {
+  width: 400px;
+  background-color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+h1, h2 {
+  margin-bottom: 20px;
 }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-nav button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #61dafb;
-  border: none;
-  border-radius: 5px;
-  color: black;
-}
-
-main {
-  padding: 20px;
-}
-
-.tela {
-  display: none;
-}
-
-.tela:not(.oculto) {
+button {
   display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: #555;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-#clickButton {
-  font-size: 24px;
-  padding: 20px 40px;
+button:hover {
+  background-color: #777;
+}
+
+#game, #instructions {
+  display: none;
   margin-top: 20px;
-  cursor: pointer;
+}
+
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.message {
+  margin-top: 15px;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #aa3333;
 }
