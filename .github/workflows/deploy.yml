@@ -1,11 +1,23 @@
 name: 🌒 Deploy & Quality 
 
 on:
-push:
- -main
+ branches:
+   push:
+     - main
 
 permissions:
   contents: read
   pages: write
   id-token: write 
 
+jobs:
+  deploy:
+    name: 🚀(rocket) Deploy to Github pages
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/head/main'
+    outputs:
+      page_url: ${{steps.deployment.outputs.page_url }}
+
+     environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} 

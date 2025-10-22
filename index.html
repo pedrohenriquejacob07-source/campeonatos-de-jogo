@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Campeonato de Jogo</title>
+  <title>Jogo Clicker Divertido</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
+<body>
+  <header>
+    <h1>🎮 Jogo Clicker</h1>
+    <nav id="menu">
+      <ul>
+        <li><button onclick="mostrarTela('jogo')">Iniciar Jogo</button></li>
+        <li><button onclick="mostrarTela('instrucoes')">Como Jogar</button></li>
+        <li><button onclick="mostrarTela('creditos')">Créditos</button></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="login-container">
-    <h2> Login  Campeonato de Jogo</h2>
-    <form onsubmit="return login()">
-      <label for="user">Usuário:</label>
-      <input type="text" id="user" required>
+  <main>
+    <section id="jogo" class="tela">
+      <h2>Clique no botão abaixo o máximo que puder!</h2>
+      <button id="clickButton">Clique Aqui!</button>
+      <p>Pontuação: <span id="pontuacao">0</span></p>
+    </section>
 
-      <label for="pass">Senha:</label>
-      <input type="password" id="pass" required>
+    <section id="instrucoes" class="tela oculto">
+      <h2>Como Jogar</h2>
+      <p>É simples! Clique no botão para ganhar pontos. Tente bater seu recorde!</p>
+    </section>
 
-      <button type="submit">Entrar</button>
-    </form>
-    <p class="msg">Use qualquer nome e senha para acessar (simulação).</p>
-  </div>
+    <section id="creditos" class="tela oculto">
+      <h2>Créditos</h2>
+      <p>Desenvolvido por Você 😎</p>
+      <p>Feito com HTML, CSS e JavaScript</p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
