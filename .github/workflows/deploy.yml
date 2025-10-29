@@ -1,4 +1,4 @@
-name: 🌒 Deploy & Quality 
+name: 🚀 Deploy & Quality Assurance
 
 on:
   push:
@@ -9,8 +9,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write 
-
+  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,28 +17,28 @@ concurrency:
 
 jobs:
   deploy:
-    name: 🚀(rocket) Deploy to Github pages
+    name: 🚀 Deploy to Github pages
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/head/main'
+    if: github.ref == 'refs/heads/main'
     outputs:
-      page_url: ${{steps.deployment.outputs.page_url }}
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} 
-      steps:
-       - name: 🏒 checkout code
-         uses: action/checkout@v4
-         
-         -name: ®️ setup pages
-         uses: actions/configure-pages@v4
+      url: ${{ steps.deployment.outputs.page_url }}
 
-       - name: 🆎 upload artifact 
-         uses: actions/upload-pages-artifact@v3
-         with:
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📄 Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📦 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           path: "."
-          
-       - name: 🆚 deplay to Github pages
-         id: deplayment 
-         uses: actions/deplay-pages@v4
-        
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
