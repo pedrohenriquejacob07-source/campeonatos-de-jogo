@@ -1,10 +1,11 @@
 name: 🌒 Deploy & Quality 
 
 on:
- branches:
-   push:
-     - main
-   workflow_dispatch:
+ push:
+   branches:
+  
+      - main
+ workflow_dispatch:
 
 permissions:
   contents: read
