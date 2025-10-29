@@ -1,11 +1,10 @@
 name: 🌒 Deploy & Quality 
 
 on:
- push:
-   branches:
-  
+  push:
+    branches:
       - main
- workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,8 +13,8 @@ permissions:
 
 
 concurrency:
- group: ${{ github.workflow }}-${{ github.ref }}
- cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
