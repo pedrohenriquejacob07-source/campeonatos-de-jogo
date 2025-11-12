@@ -1,47 +1,31 @@
-let randomNumber;
-let attempts;
+let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
 
-function startGame() {
-  document.getElementById('menu').style.display = 'none';
-  document.getElementById('game').style.display = 'block';
-  document.getElementById('gameMessage').textContent = '';
-  document.getElementById('guessInput').value = '';
-  randomNumber = Math.floor(Math.random() * 100) + 1;
-  attempts = 0;
-}
+const botao = document.getElementById('botao');
+const mensagem = document.getElementById('mensagem');
+const tentativasTxt = document.getElementById('tentativas');
 
-function showInstructions() {
-  document.getElementById('menu').style.display = 'none';
-  document.getElementById('instructions').style.display = 'block';
-}
+botao.addEventListener('click', () => {
+    const palpite = parseInt(document.getElementById('palpite').value);
 
-function exitGame() {
-  alert('Obrigado por jogar!');
-  window.close(); // Pode não funcionar em todos os navegadores
-}
+    if (isNaN(palpite) || palpite < 1 || palpite > 100) {
+        mensagem.textContent = " Digite um número válido entre 1 e 100!";
+        mensagem.style.color = "yellow";
+        return;
+    }
 
-function backToMenu() {
-  document.getElementById('game').style.display = 'none';
-  document.getElementById('instructions').style.display = 'none';
-  document.getElementById('menu').style.display = 'block';
-}
+    tentativas++;
 
-function checkGuess() {
-  const userGuess = parseInt(document.getElementById('guessInput').value);
-  const message = document.getElementById('gameMessage');
+    if (palpite === numeroSecreto) {
+        mensagem.textContent = ` Parabéns! Você acertou o número ${numeroSecreto} em ${tentativas} tentativas!`;
+        mensagem.style.color = "limegreen";
+    } else if (palpite < numeroSecreto) {
+        mensagem.textContent = "🔼 O número secreto é maior!";
+        mensagem.style.color = "orange";
+    } else {
+        mensagem.textContent = "🔽 O número secreto é menor!";
+        mensagem.style.color = "orange";
+    }
 
-  if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-    message.textContent = "Por favor, insira um número válido entre 1 e 100.";
-    return;
-  }
-
-  attempts++;
-
-  if (userGuess === randomNumber) {
-    message.innerHTML = `🎉 Parabéns! Você acertou em ${attempts} tentativa(s)!`;
-  } else if (userGuess < randomNumber) {
-    message.textContent = "🔼 Tente um número maior.";
-  } else {
-    message.textContent = "🔽 Tente um número menor.";
-  }
-}
+    tentativasTxt.textContent = `Tentativas: ${tentativas}`;
+});

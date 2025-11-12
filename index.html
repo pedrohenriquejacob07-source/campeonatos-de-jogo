@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jogo de Adivinhação</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o Número - História</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <div id="menu">
-      <h1>Jogo de Adivinhação</h1>
-      <button onclick="startGame()">Jogar</button>
-      <button onclick="showInstructions()">Instruções</button>
-      <button onclick="exitGame()">Sair</button>
+<body class="intro">
+    <div class="container">
+        <h1>🎯 O Desafio do Número Misterioso</h1>
+        <p>
+            Há muito tempo, em uma aldeia digital, vivia um sábio programador que adorava testar o raciocínio dos jovens.
+            Ele criava desafios numéricos e dizia: “Quem descobrir o número secreto provará ser um verdadeiro mestre da lógica”.
+        </p>
+        <p>
+            Agora, chegou sua vez de enfrentar o desafio. Será que você consegue adivinhar o número escondido?
+        </p>
+        <a href="menu.html" class="btn">Ir para o Menu</a>
     </div>
-
-    <div id="game">
-      <h2>Tente adivinhar o número (1 a 100)</h2>
-      <input type="number" id="guessInput" placeholder="Digite seu palpite" min="1" max="100" />
-      <button onclick="checkGuess()">Enviar Palpite</button>
-      <p class="message" id="gameMessage"></p>
-      <button class="back-button" onclick="backToMenu()">Voltar ao Menu</button>
-    </div>
-
-    <div id="instructions">
-      <h2>Como Jogar</h2>
-      <p>O jogo escolhe um número aleatório entre 1 e 100. Tente adivinhar com o menor número de tentativas possível.</p>
-      <button class="back-button" onclick="backToMenu()">Voltar ao Menu</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
