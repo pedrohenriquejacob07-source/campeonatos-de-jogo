@@ -1,32 +1,51 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+let secretNumber;
+let attempts;
 
-const guessInput = document.getElementById('guess');
-const checkBtn = document.getElementById('checkBtn');
-const message = document.getElementById('message');
-const restartBtn = document.getElementById('restartBtn');
+function startGame() {
+    secretNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    document.getElementById('feedback').textContent = '';
+    document.getElementById('feedback').className = '';
+    document.getElementById('guessInput').value = '';
+    document.getElementById('restartButton').style.display = 'none';
+    document.getElementById('attempts').textContent = 'Tentativas: 0';
+}
 
-checkBtn.addEventListener('click', () => {
+function checkGuess() {
+    const guessInput = document.getElementById('guessInput');
+    const feedback = document.getElementById('feedback');
+    const attemptsDisplay = document.getElementById('attempts');
     const guess = Number(guessInput.value);
+
+    feedback.className = '';
+
     if (!guess || guess < 1 || guess > 100) {
-        message.textContent = "Digite um número válido entre 1 e 100!";
+        feedback.textContent = 'Digite um número entre 1 e 100!';
         return;
     }
 
-    if (guess === randomNumber) {
-        message.textContent = `🎉 Parabéns! Você acertou o número ${randomNumber}!`;
-        restartBtn.style.display = 'inline-block';
-        checkBtn.disabled = true;
-    } else if (guess < randomNumber) {
-        message.textContent = "⬆ Tente um número maior!";
-    } else {
-        message.textContent = "⬇ Tente um número menor!";
-    }
-});
+    attempts++;
+    attemptsDisplay.textContent = `Tentativas: ${attempts}`;
 
-restartBtn.addEventListener('click', () => {
-    randomNumber = Math.floor(Math.random() * 100) + 1;
-    message.textContent = '';
+    if (guess === secretNumber) {
+        feedback.textContent = `🎉 Acertou! Número: ${secretNumber} em ${attempts} tentativas!`;
+        feedback.classList.add('acertou');
+        document.getElementById('restartButton').style.display = 'inline-block';
+    } else if (guess < secretNumber) {
+        feedback.textContent = '⬆ Muito baixo!';
+        feedback.classList.add('muito-baixo');
+    } else {
+        feedback.textContent = '⬇ Muito alto!';
+        feedback.classList.add('muito-alto');
+    }
+
     guessInput.value = '';
-    checkBtn.disabled = false;
-    restartBtn.style.display = 'none';
-});
+    guessInput.focus();
+}
+
+function restartGame() {
+    startGame();
+}
+
+window.onload = startGame;
+
