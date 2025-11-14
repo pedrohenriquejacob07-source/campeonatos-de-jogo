@@ -1,110 +1,73 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-    margin: 0;
-    background: linear-gradient(135deg, #4b79a1, #283e51);
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-/* CONTAINER */
-.container {
-    background: rgba(0,0,0,0.45);
-    padding: 30px;
-    width: 420px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 0 15px #00000070;
-    animation: drop 0.7s ease forwards;
+/* Escondendo telas */
+.hidden {
+  display: none;
 }
 
-/* ANIMAÇÃO DO CONTAINER */
-@keyframes drop {
-    from { opacity: 0; transform: translateY(-40px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* MENUS */
-#menu-principal, #menu-historia, #menu-jogo {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-
-/* ANIMAÇÃO DE ENTRADA SUAVE */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to   { opacity: 1; transform: scale(1); }
-}
-
-/* TÍTULO ANIMADO */
-h1 {
-    animation: brilho 3s infinite;
-}
-
-@keyframes brilho {
-    0% { text-shadow: 0 0 5px white; }
-    50% { text-shadow: 0 0 15px cyan; }
-    100% { text-shadow: 0 0 5px white; }
-}
-
-/* BOTÕES */
+/* Botões */
 button {
-    width: 75%;
-    padding: 12px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 8px;
-    background: #00b4d8;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    animation: pulse 2s infinite;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #ff5e57;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: bounce 2s infinite;
 }
 
-button:hover {
-    background: #0090ad;
-}
-
-/* PULSAÇÃO DOS BOTÕES */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-    100% { transform: scale(1); }
-}
-
-/* BOTÃO REINICIAR */
-#reiniciar {
-    background: #4caf50;
-    display: none;
-}
-
-/* INPUT */
+/* Input */
 input {
-    padding: 10px;
-    margin-top: 10px;
-    width: 60%;
-    font-size: 17px;
-    border-radius: 8px;
-    border: none;
-    text-align: center;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-/* RESULTADO */
-#resultado {
-    margin-top: 20px;
-    min-height: 25px;
-    font-size: 18px;
+/* Feedback do jogo */
+#feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  min-height: 30px;
 }
 
-/* ANIMAÇÃO AO ACERTAR */
-.acertou {
-    animation: winner 0.7s ease forwards;
+/* Animação com keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-@keyframes winner {
-    0% { transform: scale(1); color: #fff; }
-    50% { transform: scale(1.3); color: #00ffea; text-shadow: 0 0 20px #00ffea; }
-    100% { transform: scale(1); }
+/* Efeitos para título */
+h1, h2 {
+  animation: fadeIn 2s ease-in-out;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
