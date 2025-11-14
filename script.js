@@ -1,31 +1,32 @@
-let numeroSecreto = Math.floor(Math.random() * 100) + 1;
-let tentativas = 0;
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-const botao = document.getElementById('botao');
-const mensagem = document.getElementById('mensagem');
-const tentativasTxt = document.getElementById('tentativas');
+const guessInput = document.getElementById('guess');
+const checkBtn = document.getElementById('checkBtn');
+const message = document.getElementById('message');
+const restartBtn = document.getElementById('restartBtn');
 
-botao.addEventListener('click', () => {
-    const palpite = parseInt(document.getElementById('palpite').value);
-
-    if (isNaN(palpite) || palpite < 1 || palpite > 100) {
-        mensagem.textContent = " Digite um número válido entre 1 e 100!";
-        mensagem.style.color = "yellow";
+checkBtn.addEventListener('click', () => {
+    const guess = Number(guessInput.value);
+    if (!guess || guess < 1 || guess > 100) {
+        message.textContent = "Digite um número válido entre 1 e 100!";
         return;
     }
 
-    tentativas++;
-
-    if (palpite === numeroSecreto) {
-        mensagem.textContent = ` Parabéns! Você acertou o número ${numeroSecreto} em ${tentativas} tentativas!`;
-        mensagem.style.color = "limegreen";
-    } else if (palpite < numeroSecreto) {
-        mensagem.textContent = "🔼 O número secreto é maior!";
-        mensagem.style.color = "orange";
+    if (guess === randomNumber) {
+        message.textContent = `🎉 Parabéns! Você acertou o número ${randomNumber}!`;
+        restartBtn.style.display = 'inline-block';
+        checkBtn.disabled = true;
+    } else if (guess < randomNumber) {
+        message.textContent = "⬆ Tente um número maior!";
     } else {
-        mensagem.textContent = "🔽 O número secreto é menor!";
-        mensagem.style.color = "orange";
+        message.textContent = "⬇ Tente um número menor!";
     }
+});
 
-    tentativasTxt.textContent = `Tentativas: ${tentativas}`;
+restartBtn.addEventListener('click', () => {
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    message.textContent = '';
+    guessInput.value = '';
+    checkBtn.disabled = false;
+    restartBtn.style.display = 'none';
 });

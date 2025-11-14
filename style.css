@@ -1,72 +1,66 @@
+/* Estilo Global */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #3a0ca3, #4361ee, #4cc9f0);
-    color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f4f4f9;
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
 }
 
-.container {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2em;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-p {
-    margin: 10px 0;
-}
-
-input {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 1em;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    background: #f72585;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 8px;
+a {
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+    color: #333;
 }
 
-.btn:hover {
-    background: #b5179e;
-}
-
-.voltar {
-    background: #7209b7;
-}
-
-.voltar:hover {
-    background: #560bad;
-}
-
-.menu-list {
+/* Menu */
+.menu ul {
     list-style: none;
     padding: 0;
 }
 
-.menu-list li {
-    margin: 15px 0;
+.menu ul li {
+    margin: 10px 0;
+}
+
+.menu h1 {
+    color: #444;
+}
+
+/* Jogo */
+.game-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#guess {
+    padding: 10px;
+    font-size: 16px;
+    width: 150px;
+}
+
+/* História */
+.story-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff3e6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(-20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+.animated-title {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.animated-text {
+    animation: fadeIn 3s ease-in-out;
 }
