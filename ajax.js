@@ -1,4 +1,4 @@
-const url = "https://jsonplaceholder.typicode.com/todo/1"; //endpoint
+const url = "https://jsonplaceholder.typicode.com/todos/1"; //endpoint
 const output = document.getElementById("output");
 const status = document.getElementById("status");
 function setLoading(on) {
