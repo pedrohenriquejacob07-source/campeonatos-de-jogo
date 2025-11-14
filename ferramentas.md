@@ -1,34 +1,186 @@
  # html : Quais elementos estão sendo usados?
-Nos arquivos HTML do projeto, estão sendo usados diversos elementos de forma estruturada e semântica. O documento começa com a declaração <!DOCTYPE html>, que indica que estamos utilizando HTML5, seguida do elemento raiz <html> com o atributo lang="pt-br", definindo que o idioma principal da página é o português do Brasil. Dentro do <html> há o <head>, que contém metadados importantes, como <meta charset="UTF-8">, garantindo que caracteres acentuados sejam exibidos corretamente, e <meta name="viewport" content="width=device-width, initial-scale=1.0">, que torna a página responsiva em diferentes dispositivos. Também está presente o <title>, que define o título que aparece na aba do navegador, e o <link rel="stylesheet" href="style.css">, que importa o arquivo de estilo externo.
+<!DOCTYPE html>: Isso fala pro navegador que é HTML5, tipo “ei, lê esse arquivo como HTML moderno”.
 
-O conteúdo visível das páginas está dentro do <body>. Para organizar os elementos, são usados <div>s que funcionam como contêineres: menu-container agrupa o título e os links do menu principal, game-container contém os elementos do jogo de adivinhar números, e story-container envolve o título e o parágrafo da história do jogo. Os títulos principais são definidos com <h1>, como “Jogo de Adivinhação” ou “História do Jogo”, e recebem animações via CSS. No menu, os links são estruturados com uma lista não ordenada <ul> contendo itens <li>, cada um com um <a> que direciona para outra página, permitindo a navegação entre o menu, o jogo e a história.
+<html lang="pt-BR">: É a raiz do documento, e o lang indica que tá em português.
 
-No jogo, há um campo de entrada <input> do tipo número, identificado com id="guess", que permite ao jogador digitar seu palpite, com atributos min e max limitando os valores entre 1 e 100 e um placeholder que exibe uma dica dentro do campo. Os botões <button> são usados para verificar o palpite e reiniciar o jogo, aparecendo apenas quando o jogador acerta. As mensagens de instrução, dicas ou sucesso são exibidas em <p>, e há <br> para criar espaçamentos visuais entre elementos como botões e links.
+<head>: Aqui fica a parte “invisível” da página, tipo título, links de CSS, essas coisas.
+
+<meta charset="UTF-8">: Serve pra deixar os acentos e símbolos certinhos.
+
+<meta name="viewport"...>: Faz a página funcionar legal no celular, tipo responsiva.
+
+<title>: O título que aparece na aba do navegador.
+
+<link rel="stylesheet"...>: Linka nosso CSS pra página ficar estilizada.
+
+Aí dentro do <body> que é a parte que a gente vê na tela:
+
+<div class="container">: Um contêiner pra organizar o conteúdo.
+
+<h1>: Título grande, tipo “Jogo de Adivinhação”.
+
+<p>: Parágrafos, pra colocar a história ou instruções.
+
+<a href="jogo.html" class="button">: Um link que funciona como botão pra começar o jogo.
+
+Na página do jogo (jogo.html) tem uns elementos extras pra interatividade:
+
+<input type="number">: Campo pra gente digitar o número que acha que é o certo.
+
+<button>: Botão que envia o palpite ou reinicia o jogo.
+
+<p id="feedback">: Mostra se o palpite tá alto, baixo ou se acertou.
+
+<p id="attempts">: Mostra quantas tentativas a gente já fez.
+
+Então, resumindo, é tudo bem simples: tem contêiner, título, parágrafos, input e botão, tudo organizado pra ficar bonitinho e interativo.
 
 Por fim, o JavaScript é incluído através do <script src="script.js"></script>, permitindo a lógica do jogo, como gerar números aleatórios, comparar palpites e reiniciar a partida. Todos esses elementos foram usados de forma semântica, clara e funcional, garantindo que a página seja acessível, responsiva e interativa.
 
  # css: Quais propriedades estão sendo usadas?
- No arquivo CSS do projeto, diversas propriedades foram usadas para estilizar e animar os elementos de forma moderna e visualmente agradável. Primeiramente, há propriedades globais aplicadas ao body, como font-family, que define a fonte do texto para 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background, que cria um gradiente linear entre tons de azul e verde; margin e padding definidas como zero para remover espaçamentos padrão; text-align: center para centralizar o conteúdo; e color: #333 para definir a cor padrão do texto.
+ Corpo da página (body)
 
-Para links, a propriedade text-decoration: none remove a sublinha padrão, enquanto os botões e links de menu (.menu-btn) usam background-color para cores sólidas ou gradientes, color para definir a cor do texto, padding para espaçamento interno, border-radius para cantos arredondados, font-weight para deixar o texto mais pesado e transition para suavizar efeitos ao passar o mouse. O estado :hover modifica o background-color, criando interatividade visual.
 
-Nos contêineres como .menu-container, .game-container e .story-container, foram usadas propriedades como margin para centralização vertical, padding para espaçamento interno, border-radius para arredondar bordas, background-color com opacidade para dar destaque sobre o fundo e box-shadow para criar profundidade e efeito de elevação.
+font-family → Define a fonte do texto.
 
-O campo de entrada (#guess) utiliza padding para espaçamento interno, width para definir a largura, font-size para tamanho da fonte, border-radius para cantos arredondados e border para definir uma borda simples. Os botões usam propriedades similares (padding, margin, border, border-radius, font-size, cursor: pointer) e também background-color e color para cores, com transition para suavidade na interação.
 
-Para animações, a propriedade @keyframes é utilizada, com animação fadeIn que modifica opacity e transform ao longo do tempo, criando efeitos de aparecimento e movimento vertical. Essa animação é aplicada a classes como .animated-title e .animated-text usando a propriedade animation que define o nome da animação, duração, função de tempo (ease-in-out) e comportamento de início.
+background → Deixa um gradiente colorido de fundo.
 
-Em resumo, as propriedades usadas no CSS incluem font-family, background, color, margin, padding, text-align, text-decoration, border-radius, font-weight, transition, width, height, border, box-shadow, cursor, opacity, transform e animation, entre outras, todas aplicadas de forma combinada para criar um layout atraente, responsivo e animado.
+
+background-size → Faz o gradiente cobrir toda a tela.
+
+
+animation → Faz o gradiente se mover devagar, tipo animado.
+
+
+display: flex; justify-content: center; align-items: center; → Centraliza todo o conteúdo na tela.
+
+
+height e margin → Faz a tela ocupar 100% da altura e tira a margem padrão.
+
+
+
+2. Container (.container)
+
+
+background → Fundo branco transparente pra destacar o conteúdo.
+
+
+padding → Espaço interno pra não ficar apertado.
+
+
+border-radius → Bordas arredondadas.
+
+
+text-align: center → Centraliza o texto.
+
+
+box-shadow → Sombra pra dar profundidade.
+
+
+transition → Anima pequenas transformações.
+
+
+transform: scale → Faz efeito de zoom quando passa o mouse.
+
+
+
+3. Títulos e parágrafos (h1, p)
+
+
+color → Cor do texto.
+
+
+text-shadow → Sombra no texto pra destacar.
+
+
+font-size e margin → Tamanho do texto e espaçamento.
+
+
+
+4. Inputs (input[type=number])
+
+
+padding e width → Deixa maior e confortável pra digitar.
+
+
+margin → Espaço entre elementos.
+
+
+border-radius e border → Bordas arredondadas e coloridas.
+
+
+outline → Remove borda padrão ao focar.
+
+
+font-size → Tamanho do texto.
+
+
+transition → Pra animação suave ao focar.
+
+
+box-shadow → Efeito visual quando o input está focado.
+
+
+
+5. Botões (.button)
+
+
+padding e margin → Tamanho do botão e espaço.
+
+
+border e border-radius → Bordas arredondadas e sem borda padrão.
+
+
+background → Gradiente de cor bonito.
+
+
+color → Cor do texto.
+
+
+cursor: pointer → Muda o cursor quando passa o mouse.
+
+
+font-size → Tamanho do texto.
+
+
+box-shadow → Sombra pra dar profundidade.
+
+
+transition e transform → Animação suave ao passar o mouse (hover).
+
+
+
+6. Feedback (#feedback)
+
+
+font-size e font-weight → Texto maior e mais chamativo.
+
+
+color → Muda de cor dependendo se o palpite foi alto, baixo ou acertou.
+
+
+animation → Pequena animação quando dá feedback (shake ou jump).
+
+
+
+7. Animações (@keyframes)
+
+
+shake → Faz o texto t
+
 
  # js : Ha algum recurso javascript?
-im, no arquivo JavaScript do projeto há vários recursos e funcionalidades utilizados para tornar o jogo interativo. O JavaScript é responsável por toda a lógica do jogo de adivinhar o número, além de controlar interações com o usuário.
+ No nosso jogo, o JavaScript é o que faz ele realmente interativo. Primeiro, ele cria um número secreto aleatório entre 1 e 100 usando Math.random() e Math.floor(). Esse número é o que o jogador precisa adivinhar.
 
-Primeiramente, é usado Math.random() para gerar um número aleatório entre 1 e 100, que será o número secreto que o jogador precisa adivinhar. Em seguida, o script captura elementos do HTML usando document.getElementById(), como o campo de entrada do palpite, os botões e o parágrafo onde as mensagens de feedback serão exibidas.
+Depois, toda vez que o jogador digita um palpite e clica no botão, o JS verifica se o número está certo, alto ou baixo usando um if/else. Dependendo do resultado, ele atualiza o texto de feedback na tela, tipo “Muito alto!”, “Muito baixo!” ou “Acertou!”.
 
-O código também utiliza event listeners, com addEventListener('click', ...), para detectar quando o jogador clica no botão de verificar o palpite ou no botão de reiniciar o jogo. Dentro dessas funções, são feitas verificações com condicionais if...else if...else para comparar o número digitado com o número secreto, exibindo mensagens diferentes dependendo se o palpite é menor, maior ou igual ao número correto.
+Além disso, o JS conta as tentativas. Cada vez que o jogador chuta um número, ele soma 1 na variável attempts e mostra isso na tela.
 
-Além disso, há o uso de manipulação do DOM, como textContent ou innerHTML, para atualizar dinamicamente o texto do parágrafo com dicas, mensagens de vitória ou instruções, e style.display para mostrar ou esconder o botão de reiniciar após o jogador acertar.
+O JS também modifica elementos da página, como mostrar ou esconder o botão de reiniciar quando o jogador acerta. Ele faz isso mudando propriedades do CSS e do conteúdo dos elementos do HTML dinamicamente.
 
-Por fim, o JavaScript também reinicia o jogo ao clicar no botão “Reiniciar Jogo”, gerando um novo número aleatório, limpando o campo de entrada e escondendo novamente o botão de reiniciar, garantindo que o jogador possa jogar quantas vezes quiser.
+Tem ainda a função de reiniciar o jogo, que reseta o número secreto, as tentativas e limpa os textos de feedback, deixando tudo pronto pra jogar de novo.
 
-Em resumo, os recursos JavaScript usados incluem geração de números aleatórios, captura de elementos do DOM, escuta de eventos, condicionais, manipulação de conteúdo e estilo de elementos, tudo combinado para criar a interatividade do jogo.
+E pra tudo funcionar, usamos eventos: onclick nos botões para chamar funções quando o jogador clica, e window.onload pra iniciar o jogo assim que a página carrega.
+
+Resumindo, o JavaScript no jogo serve pra criar o número aleatório, verificar palpites, dar feedback visual, contar tentativas, permitir reiniciar o jogo e tornar a experiência interativa.
