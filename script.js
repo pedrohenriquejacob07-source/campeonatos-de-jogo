@@ -1,56 +1,40 @@
-// Selecionando elementos
-const menu = document.getElementById('menu');
-const game = document.getElementById('game');
-const startBtn = document.getElementById('startBtn');
-const guessBtn = document.getElementById('guessBtn');
-const restartBtn = document.getElementById('restartBtn');
-const backBtn = document.getElementById('backBtn');
-const guessInput = document.getElementById('guessInput');
-const feedback = document.getElementById('feedback');
+let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
 
-let randomNumber;
+function adivinhar() {
+  const entrada = document.getElementById("entrada").value;
+  const resultado = document.getElementById("resultado");
+  const tentativasTexto = document.getElementById("tentativas");
+  const btnReiniciar = document.getElementById("btn-reiniciar");
 
-// Função para iniciar o jogo
-function startGame() {
-  menu.classList.add('hidden');
-  game.classList.remove('hidden');
-  randomNumber = Math.floor(Math.random() * 100) + 1;
-  feedback.textContent = '';
-  guessInput.value = '';
-}
-
-// Função para checar o palpite
-function checkGuess() {
-  const guess = Number(guessInput.value);
-  if (!guess || guess < 1 || guess > 100) {
-    feedback.textContent = 'Digite um número entre 1 e 100!';
+  if (entrada === "") {
+    resultado.textContent = "Digite um número!";
     return;
   }
 
-  if (guess < randomNumber) {
-    feedback.textContent = 'Muito baixo! Tente novamente.';
-  } else if (guess > randomNumber) {
-    feedback.textContent = 'Muito alto! Tente novamente.';
+  const numero = Number(entrada);
+  tentativas++;
+
+  if (numero === numeroSecreto) {
+    resultado.textContent = "🎉 Você acertou! Parabéns!";
+    tentativasTexto.textContent = `Tentativas: ${tentativas}`;
+    btnReiniciar.classList.remove("hidden");
+
+  } else if (numero < numeroSecreto) {
+    resultado.textContent = "🔼 O número é MAIOR!";
   } else {
-    feedback.textContent = `Parabéns! Você acertou o número ${randomNumber}!`;
+    resultado.textContent = "🔽 O número é MENOR!";
   }
+
+  tentativasTexto.textContent = `Tentativas: ${tentativas}`;
 }
 
-// Função para reiniciar o jogo
-function restartGame() {
-  randomNumber = Math.floor(Math.random() * 100) + 1;
-  feedback.textContent = '';
-  guessInput.value = '';
-}
+function reiniciar() {
+  numeroSecreto = Math.floor(Math.random() * 100) + 1;
+  tentativas = 0;
 
-// Voltar ao menu inicial
-function backToMenu() {
-  game.classList.add('hidden');
-  menu.classList.remove('hidden');
+  document.getElementById("resultado").textContent = "";
+  document.getElementById("tentativas").textContent = "";
+  document.getElementById("entrada").value = "";
+  document.getElementById("btn-reiniciar").classList.add("hidden");
 }
-
-// Eventos
-startBtn.addEventListener('click', startGame);
-guessBtn.addEventListener('click', checkGuess);
-restartBtn.addEventListener('click', restartGame);
-backBtn.addEventListener('click', backToMenu);

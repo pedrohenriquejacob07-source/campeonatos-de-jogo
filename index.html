@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo de Adivinhação</title>
+  <title>Menu Principal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Menu inicial -->
-  <div id="menu">
-    <h1>Bem-vindo ao Jogo de Adivinhação!</h1>
-    <p>Uma história curta: Você entrou em uma sala mágica onde deve adivinhar um número de 1 a 100 para escapar!</p>
-    <button id="startBtn">Começar o Jogo</button>
+
+  <div class="intro-animation">
+    <h1 class="fade-in">Bem-vindo ao Jogo de Adivinhação!</h1>
   </div>
 
-  <!-- Tela do jogo -->
-  <div id="game" class="hidden">
-    <h2>Advinhe o número de 1 a 100</h2>
-    <input type="number" id="guessInput" placeholder="Digite seu palpite">
-    <button id="guessBtn">Chutar</button>
-    <p id="feedback"></p>
-    <button id="restartBtn">Reiniciar</button>
-    <button id="backBtn">Voltar ao Início</button>
-  </div>
+  <nav class="menu">
+    <a href="jogo.html" class="btn">Jogar</a>
+    <a href="historia.html" class="btn">História</a>
+  </nav>
 
-  <script src="script.js"></script>
+  <footer>
+    Criado por <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
+  </footer>
+
 </body>
 </html>

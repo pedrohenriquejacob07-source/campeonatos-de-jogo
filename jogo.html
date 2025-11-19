@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <nav class="menu">
+    <a href="index.html" class="btn">Voltar ao Menu</a>
+  </nav>
+
+  <div class="game-container">
+    <h1>Adivinhe o Número (1 a 100)</h1>
+
+    <input type="number" id="entrada" placeholder="Digite um número..." min="1" max="100">
+
+    <button onclick="adivinhar()" class="btn">Enviar</button>
+
+    <p id="resultado"></p>
+    <p id="tentativas"></p>
+
+    <button id="btn-reiniciar" onclick="reiniciar()" class="btn hidden">Reiniciar Jogo</button>
+  </div>
+
+  <footer>
+    Criado por <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
+  </footer>
+
+</body>
+</html>
+
