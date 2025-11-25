@@ -1,40 +1,21 @@
-let numeroSecreto = Math.floor(Math.random() * 100) + 1;
-let tentativas = 0;
+document.getElementById("formulario").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-function adivinhar() {
-  const entrada = document.getElementById("entrada").value;
-  const resultado = document.getElementById("resultado");
-  const tentativasTexto = document.getElementById("tentativas");
-  const btnReiniciar = document.getElementById("btn-reiniciar");
+  const nome = document.getElementById("nome").value;
+  const jogo = document.getElementById("jogo").value;
 
-  if (entrada === "") {
-    resultado.textContent = "Digite um número!";
-    return;
-  }
+  const mensagem = document.getElementById("mensagem");
 
-  const numero = Number(entrada);
-  tentativas++;
+  mensagem.innerHTML =
+    `🎉 <strong>${nome}</strong>, sua inscrição para o campeonato de <strong>${jogo}</strong> foi enviada com sucesso!`;
 
-  if (numero === numeroSecreto) {
-    resultado.textContent = "🎉 Você acertou! Parabéns!";
-    tentativasTexto.textContent = `Tentativas: ${tentativas}`;
-    btnReiniciar.classList.remove("hidden");
+  mensagem.style.color = "#8aff90";
+  mensagem.style.marginTop = "20px";
 
-  } else if (numero < numeroSecreto) {
-    resultado.textContent = "🔼 O número é MAIOR!";
-  } else {
-    resultado.textContent = "🔽 O número é MENOR!";
-  }
-
-  tentativasTexto.textContent = `Tentativas: ${tentativas}`;
-}
-
-function reiniciar() {
-  numeroSecreto = Math.floor(Math.random() * 100) + 1;
-  tentativas = 0;
-
-  document.getElementById("resultado").textContent = "";
-  document.getElementById("tentativas").textContent = "";
-  document.getElementById("entrada").value = "";
-  document.getElementById("btn-reiniciar").classList.add("hidden");
-}
+  // animação suave
+  mensagem.style.opacity = 0;
+  setTimeout(() => {
+    mensagem.style.transition = "1s";
+    mensagem.style.opacity = 1;
+  }, 50);
+});

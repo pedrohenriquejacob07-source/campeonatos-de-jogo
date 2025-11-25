@@ -3,23 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Principal</title>
+  <title>Campeonatos de Jogos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="intro-animation">
-    <h1 class="fade-in">Bem-vindo ao Jogo de Adivinhação!</h1>
-  </div>
-
-  <nav class="menu">
-    <a href="jogo.html" class="btn">Jogar</a>
-    <a href="historia.html" class="btn">História</a>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#lol">League of Legends</a></li>
+      <li><a href="#cs">Counter-Strike 2</a></li>
+      <li><a href="#valorant">Valorant</a></li>
+      <li><a href="#fortnite">Fortnite</a></li>
+      <li><a href="#fifa">EA FC / FIFA</a></li>
+      <li><a href="#inscricao">Inscrição</a></li>
+    </ul>
   </nav>
+</header>
 
-  <footer>
-    Criado por <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
-  </footer>
+<!-- SEÇÕES -->
+<section id="inicio" class="caixa">
+  <h2>Bem-vindo aos Campeonatos de Jogos</h2>
+  <p>
+    Explore as maiores competições do mundo dos eSports! Aqui você encontrará
+    informações detalhadas sobre torneios oficiais dos games mais populares do planeta.
+  </p>
+</section>
 
+<section id="lol" class="caixa">
+  <h2>League of Legends – Worlds</h2>
+  <p>
+    O famoso Worlds é o ápice competitivo de League of Legends. As melhores equipes de
+    todo o mundo disputam o título de campeão mundial diante de milhões de espectadores.
+  </p>
+</section>
+
+<section id="cs" class="caixa">
+  <h2>Counter-Strike 2 – Majors</h2>
+  <p>
+    Os Majors de CS2 são eventos históricos. Eles reúnem jogadores com reflexos
+    inacreditáveis e estratégias avançadas. O cenário competitivo é um dos mais antigos
+    e respeitados.
+  </p>
+</section>
+
+<section id="valorant" class="caixa">
+  <h2>Valorant – Champions</h2>
+  <p>
+    O torneio Champions consagra a melhor equipe de Valorant do planeta. Combina
+    habilidades táticas com jogadas explosivas e muita emoção.
+  </p>
+</section>
+
+<section id="fortnite" class="caixa">
+  <h2>Fortnite – World Cup</h2>
+  <p>
+    A World Cup de Fortnite fez história com uma das maiores premiações dos eSports.
+    As partidas misturam estratégia, construção e mira afiada.
+  </p>
+</section>
+
+<section id="fifa" class="caixa">
+  <h2>EA FC / FIFA – eWorld Cup</h2>
+  <p>
+    A eWorld Cup reúne os melhores jogadores de futebol digital. Cada partida é uma
+    batalha de tática e habilidade no controle.
+  </p>
+</section>
+
+<section id="inscricao" class="caixa">
+  <h2>Inscreva-se para participar</h2>
+  <form id="formulario">
+    <label>Seu nome:</label>
+    <input type="text" id="nome" required>
+
+    <label>Escolha seu jogo:</label>
+    <select id="jogo">
+      <option>League of Legends</option>
+      <option>Counter-Strike 2</option>
+      <option>Valorant</option>
+      <option>Fortnite</option>
+      <option>EA FC / FIFA</option>
+    </select>
+
+    <button id="btn">Enviar inscrição</button>
+  </form>
+
+  <p id="mensagem"></p>
+</section>
+
+<footer>
+  Criado por <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
