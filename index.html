@@ -11,75 +11,84 @@
 <header>
   <nav>
     <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#lol">League of Legends</a></li>
-      <li><a href="#cs">Counter-Strike 2</a></li>
-      <li><a href="#valorant">Valorant</a></li>
-      <li><a href="#fortnite">Fortnite</a></li>
-      <li><a href="#fifa">EA FC / FIFA</a></li>
-      <li><a href="#inscricao">Inscrição</a></li>
+      <li><a onclick="mostrar('inicio')">Início</a></li>
+      <li><a onclick="mostrar('lol')">League of Legends</a></li>
+      <li><a onclick="mostrar('cs')">CS2</a></li>
+      <li><a onclick="mostrar('valorant')">Valorant</a></li>
+      <li><a onclick="mostrar('fortnite')">Fortnite</a></li>
+      <li><a onclick="mostrar('fifa')">EA FC / FIFA</a></li>
+      <li><a onclick="mostrar('inscricao')">Inscrição</a></li>
+      <li><a onclick="mostrar('jogo')">🎮 Mini Jogo</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- SEÇÕES -->
-<section id="inicio" class="caixa">
-  <h2>Bem-vindo aos Campeonatos de Jogos</h2>
+<!-- INÍCIO -->
+<section id="inicio" class="box">
+  <h2>Bem-vindo aos Campeonatos de Jogos!</h2>
   <p>
-    Explore as maiores competições do mundo dos eSports! Aqui você encontrará
-    informações detalhadas sobre torneios oficiais dos games mais populares do planeta.
+    Os eSports cresceram ao redor do mundo e hoje movimentam milhões de fãs.
+    Aqui você encontra informações completas sobre os campeonatos de jogos mais famosos.
+  </p>
+  <p>
+    Explore o menu acima para conhecer tudo sobre cada competição — e divirta-se com nosso mini jogo!
   </p>
 </section>
 
-<section id="lol" class="caixa">
+<!-- LOL -->
+<section id="lol" class="box escondido">
   <h2>League of Legends – Worlds</h2>
   <p>
-    O famoso Worlds é o ápice competitivo de League of Legends. As melhores equipes de
-    todo o mundo disputam o título de campeão mundial diante de milhões de espectadores.
+    O Worlds é o campeonato mundial de League of Legends, reunindo equipes de todas as regiões.
+    Ele é famoso por suas cerimônias de abertura épicas e jogos de alta intensidade.
   </p>
 </section>
 
-<section id="cs" class="caixa">
+<!-- CS -->
+<section id="cs" class="box escondido">
   <h2>Counter-Strike 2 – Majors</h2>
   <p>
-    Os Majors de CS2 são eventos históricos. Eles reúnem jogadores com reflexos
-    inacreditáveis e estratégias avançadas. O cenário competitivo é um dos mais antigos
-    e respeitados.
+    Os Majors representam o mais alto nível competitivo de CS2, com partidas emocionantes,
+    estratégias elaboradas e arenas lotadas.
   </p>
 </section>
 
-<section id="valorant" class="caixa">
+<!-- VALORANT -->
+<section id="valorant" class="box escondido">
   <h2>Valorant – Champions</h2>
   <p>
-    O torneio Champions consagra a melhor equipe de Valorant do planeta. Combina
-    habilidades táticas com jogadas explosivas e muita emoção.
+    O Valorant Champions é o campeonato mundial do jogo, reunindo as melhores equipes de cada região.
   </p>
 </section>
 
-<section id="fortnite" class="caixa">
+<!-- FORTNITE -->
+<section id="fortnite" class="box escondido">
   <h2>Fortnite – World Cup</h2>
   <p>
-    A World Cup de Fortnite fez história com uma das maiores premiações dos eSports.
-    As partidas misturam estratégia, construção e mira afiada.
+    A World Cup de Fortnite impressionou o mundo com suas premiações milionárias
+    e jogadores incríveis de todas as idades.
   </p>
 </section>
 
-<section id="fifa" class="caixa">
+<!-- FIFA -->
+<section id="fifa" class="box escondido">
   <h2>EA FC / FIFA – eWorld Cup</h2>
   <p>
-    A eWorld Cup reúne os melhores jogadores de futebol digital. Cada partida é uma
-    batalha de tática e habilidade no controle.
+    O maior campeonato do jogo EA FC reúne competidores profissionais do mundo todo
+    em busca do título de melhor jogador de futebol virtual.
   </p>
 </section>
 
-<section id="inscricao" class="caixa">
-  <h2>Inscreva-se para participar</h2>
+<!-- INSCRIÇÃO -->
+<section id="inscricao" class="box escondido">
+  <h2>Inscreva-se</h2>
+
   <form id="formulario">
-    <label>Seu nome:</label>
+    <label>Nome:</label>
     <input type="text" id="nome" required>
 
-    <label>Escolha seu jogo:</label>
-    <select id="jogo">
+    <label>Selecione o jogo:</label>
+    <select id="jogo-escolhido">
       <option>League of Legends</option>
       <option>Counter-Strike 2</option>
       <option>Valorant</option>
@@ -87,14 +96,26 @@
       <option>EA FC / FIFA</option>
     </select>
 
-    <button id="btn">Enviar inscrição</button>
+    <button type="submit" id="btn-enviar">Enviar</button>
   </form>
 
   <p id="mensagem"></p>
 </section>
 
+<!-- MINI JOGO -->
+<section id="jogo" class="box escondido">
+  <h2>🎮 Mini Jogo — Teste Seu Reflexo</h2>
+  <p>Clique no círculo assim que ele aparecer!</p>
+
+  <button onclick="iniciarJogo()" class="btn-jogo">Iniciar Jogo</button>
+
+  <div id="area-jogo"></div>
+
+  <p id="resultado-jogo"></p>
+</section>
+
 <footer>
-  Criado por <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
+  Criado por: <strong>Pedro Henrique Jacob Ferreira Ramos</strong>
 </footer>
 
 <script src="script.js"></script>

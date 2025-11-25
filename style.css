@@ -1,98 +1,116 @@
-/* CONFIG GERAL */
+/* GERAL */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0a0a0a;
-  color: white;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0b1220, #162447);
+  color: #e0e8ff;
 }
 
 /* MENU */
 header {
-  background: linear-gradient(90deg, #4216ff, #7facff);
+  background: linear-gradient(90deg, #4c00ff, #0084ff);
   padding: 20px 0;
+  box-shadow: 0 4px 12px #0005;
   position: sticky;
   top: 0;
-  z-index: 20;
-  box-shadow: 0px 4px 10px #000;
+  z-index: 1000;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   justify-content: center;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+  gap: 35px;
 }
 
 nav ul li a {
-  font-size: 20px;
-  text-decoration: none;
+  font-size: 18px;
   color: white;
-  font-weight: bold;
-  padding: 10px 15px;
+  cursor: pointer;
+  padding: 10px 18px;
   border-radius: 10px;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
-  background: #ffffff40;
+  background: #ffffff35;
   transform: scale(1.15);
-  cursor: pointer;
 }
 
-/* SEÇÕES */
-.caixa {
+/* BOXES */
+.box {
   width: 80%;
   margin: 40px auto;
-  padding: 25px;
-  background: #141414;
+  background: #111a2e;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0px 0px 15px #000;
+  box-shadow: 0 0 20px #0007;
 }
 
-.caixa h2 {
-  color: #7facff;
-  font-size: 28px;
+.box h2 {
+  color: #4aa8ff;
 }
 
-/* FORMULÁRIO */
+/* ESCONDER */
+.escondido {
+  display: none;
+}
+
+/* FORM */
 input, select {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
+  font-size: 16px;
   border-radius: 8px;
   border: none;
-  font-size: 16px;
 }
 
 button {
   margin-top: 20px;
-  padding: 12px 20px;
-  background: #4216ff;
+  padding: 14px 22px;
   border: none;
+  background: linear-gradient(90deg, #4c00ff, #0084ff);
   color: white;
-  font-size: 18px;
-  border-radius: 8px;
+  font-size: 17px;
   cursor: pointer;
+  border-radius: 10px;
   transition: 0.3s;
-  box-shadow: 0px 0px 10px #4216ff;
+  box-shadow: 0 0 15px #000;
 }
 
 button:hover {
-  transform: scale(1.1);
-  background: #5d38ff;
-  box-shadow: 0px 0px 15px #7facff;
+  transform: scale(1.12);
+  box-shadow: 0 0 18px #0084ff;
+}
+
+/* JOGO */
+#area-jogo {
+  width: 100%;
+  height: 300px;
+  background: #0a0f1d;
+  border-radius: 12px;
+  margin-top: 20px;
+  position: relative;
+  box-shadow: inset 0 0 20px #000;
+}
+
+.circulo {
+  width: 60px;
+  height: 60px;
+  background: #00aaff;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
   margin-top: 40px;
   padding: 20px;
-  background: #111;
   text-align: center;
-  font-size: 16px;
-  color: #bbb;
+  background: #0a0f1d;
+  color: #7fa7ff;
 }
-
-  
