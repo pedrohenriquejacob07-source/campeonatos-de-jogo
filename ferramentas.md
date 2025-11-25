@@ -1,87 +1,234 @@
  # html : Quais elementos estão sendo usados?
-No HTML que a gente fez, foram usados os seguintes elementos:
+1. <!DOCTYPE html>
 
-<!DOCTYPE html> → define que o arquivo é um documento HTML5.
+Define o documento como HTML5.
 
-<html lang="pt-BR"> → é a raiz do documento, e indica que o idioma é português.
+2. <html>
 
-<head> → é a parte que guarda informações sobre a página, tipo título e links de CSS.
+Elemento raiz que envolve toda a página.
 
-<meta charset="UTF-8"> → define a codificação de caracteres para português e outros símbolos.
+3. <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> → faz o site se ajustar em celulares e tablets.
+Contém configurações do documento, como título, charset e link para CSS.
 
-<title> → coloca o título que aparece na aba do navegador.
+4. <meta>
 
-<link rel="stylesheet" href="style.css"> → conecta o arquivo de CSS.
+Utilizadas para definir codificação e responsividade.
 
-<body> → é onde fica todo o conteúdo visível da página.
+5. <title>
 
-<div> → usado para separar seções, tipo o menu inicial e a tela do jogo.
+Define o título da página no navegador.
 
-<h1> e <h2> → títulos da página, <h1> maior e <h2> menor.
+6. <link>
 
-<p> → parágrafos, usado pra contar a história e mostrar mensagens de feedback.
+Importa o arquivo CSS externo.
 
-<button> → botões que o usuário clica (começar, chutar, reiniciar e voltar).
+7. <body>
 
-<input> → campo onde o usuário digita o número que acha que é o certo.
+Contém todo o conteúdo visível da página.
 
-<script src="script.js"></script> → conecta o arquivo JavaScript que faz o jogo funcionar.
+8. <header>
 
+Usado para conter o menu do site.
+
+9. <nav>
+
+Indica a área de navegação (menu).
+
+10. <ul> e <li>
+
+Criam listas para os itens do menu.
+
+11. <a>
+
+Links usados no menu para navegar entre as seções da página.
+
+12. <section>
+
+Cada bloco de conteúdo principal da página está dentro de uma seção.
+
+13. <h2>
+
+Títulos das seções (como “League of Legends – Worlds”).
+
+14. <p>
+
+Parágrafos com o conteúdo explicativo.
+
+15. <form>
+
+Formulário de inscrição.
+
+16. <label>
+
+Rótulos para os campos do formulário.
+
+17. <input>
+
+Campo para digitar o nome do usuário.
+
+18. <select> e <option>
+
+Menu suspenso para escolha do jogo.
+
+19. <button>
+
+Botão animado para enviar a inscrição.
+
+20. <footer>
+
+Rodapé contendo o nome do criador.
+
+21. <script>
+
+Importa o arquivo JavaScript externo.
  # css: Quais propriedades estão sendo usadas?
- margin e padding → definem o espaço interno (padding) e externo (margin) dos elementos.
+ margin
 
-box-sizing: border-box → faz com que o padding e a borda sejam incluídos na largura e altura do elemento.
+padding
 
-font-family → escolhe o tipo de letra da página.
+width
 
-background / background-color / linear-gradient → define cor ou gradiente de fundo do site.
+height
 
-color → define a cor do texto.
+background
 
-display → controla como o elemento é exibido (ex: flex para alinhar elementos).
+background-color
 
-justify-content e align-items → usadas com display: flex para centralizar elementos horizontal e verticalmente.
+background: linear-gradient()
 
-height e width → definem altura e largura dos elementos.
+box-shadow
 
-text-align → centraliza o texto.
+border
 
-border e border-radius → cria borda e deixa as bordas arredondadas.
+border-radius
 
-cursor → muda o cursor quando passa o mouse, tipo pointer em botões.
+position
 
-animation → aplica animações nos elementos.
+top
 
-@keyframes → define como a animação acontece, tipo bounce ou fadeIn.
+z-index
 
-margin-top / margin-bottom → ajusta o espaço acima ou abaixo de elementos específicos.
+display
 
-min-height → garante um tamanho mínimo para o elemento.
+gap
 
-class .hidden { display: none; } → esconde elementos quando necessário.
+justify-content
+
+2. Tipografia
+
+font-family
+
+font-size
+
+font-weight
+
+color
+
+text-decoration
+
+text-align
+
+3. Elementos de lista e navegação
+
+list-style
+
+cursor
+
+4. Efeitos e animações
+
+transition
+
+transform
+
+opacity
+
+5. Efeitos visuais extras
+
+box-shadow
+
+background: linear-gradient()
+
+6. Formulário
+
+border
+
+border-radius
+
+font-size
+
+width
+
+7. Interação com usuário (hover)
+
+:hover (pseudo-classe)
+
+transform: scale()
+
+background-color (dentro do hover)
+
+box-shadow (no hover)
  # js : Ha algum recurso javascript?
- document.getElementById() → serve para pegar elementos do HTML pelo id, tipo botões, input ou parágrafo de feedback.
+ Usado para acessar elementos do HTML pelo atributo id, como:
 
-Variáveis (let) → armazenam valores, como o número aleatório (randomNumber) e o palpite do jogador.
+Campo de nome
 
-Funções (function) → blocos de código que executam tarefas, tipo:
+Campo de jogo
 
-startGame() → inicia o jogo e mostra a tela do jogo.
+Parágrafo de mensagem
 
-checkGuess() → verifica se o número digitado é maior, menor ou igual ao número aleatório.
+Formulário
 
-restartGame() → reinicia o jogo com outro número.
+Permite manipular o conteúdo desses elementos.
 
-backToMenu() → volta para o menu inicial.
+2. addEventListener("submit", ...)
 
-Eventos (addEventListener) → “ouvem” ações do usuário, como clicar em botões, e chamam as funções correspondentes.
+Utilizado para capturar o evento de envio do formulário.
+Com isso, podemos controlar o que acontece quando o usuário clica no botão.
 
-Math.random() e Math.floor() → criam o número aleatório de 1 a 100.
+3. event.preventDefault()
 
-Number() → converte o valor do input de texto para número.
+Impede que o formulário seja enviado da maneira tradicional (recarregando a página).
+Assim, a resposta é exibida direto na tela.
 
-Manipulação de classes (classList.add / classList.remove) → mostra ou esconde seções do site (menu ou jogo).
+4. Manipulação de texto e conteúdo
 
-Alteração de texto (textContent) → mostra mensagens para o usuário, tipo “Muito alto!” ou “Parabéns!”.
+Uso de:
+
+element.innerHTML
+
+element.innerText
+
+Serve para escrever mensagens na tela, como a confirmação de inscrição.
+
+5. Manipulação de CSS via JS
+
+Exemplo:
+
+mensagem.style.color
+
+mensagem.style.opacity
+
+mensagem.style.transition
+
+mensagem.style.marginTop
+
+Permite criar efeitos visuais controlados pelo JavaScript.
+
+6. Temporização com setTimeout()
+
+Utilizada para criar uma pequena animação suave na exibição da mensagem, aplicando uma transição após alguns milissegundos.
+
+⭐ Resumo dos recursos usados
+
+Manipulação do DOM
+
+Eventos de formulário
+
+Controle de envio (preventDefault)
+
+Edição de estilos via JavaScript
+
+Atualização dinâmica de conteúdo
+
+Pequena animação usando setTimeout
