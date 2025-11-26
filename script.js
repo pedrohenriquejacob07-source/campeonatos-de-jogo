@@ -1,50 +1,54 @@
-/* Mostrar seções */
-function mostrar(secao) {
-  const todas = document.querySelectorAll("section");
-  todas.forEach(s => s.classList.add("escondido"));
-  document.getElementById(secao).classList.remove("escondido");
-}
+// Entrar no site → mostrar menu
+const intro = document.getElementById("intro");
+const menu = document.getElementById("menu");
+const enterBtn = document.getElementById("enterBtn");
 
-/* FORMULÁRIO */
-document.getElementById("formulario").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const nome = document.getElementById("nome").value;
-  const jogo = document.getElementById("jogo-escolhido").value;
-
-  const msg = document.getElementById("mensagem");
-  msg.innerHTML = `✔ ${nome}, você foi inscrito no campeonato de <b>${jogo}</b>!`;
-  msg.style.color = "#6bff8a";
+enterBtn.addEventListener("click", () => {
+  intro.style.display = "none";
+  menu.style.left = "0";
 });
 
-/* MINI JOGO */
-let tempoInicio;
-
-function iniciarJogo() {
-  const area = document.getElementById("area-jogo");
-  const resultado = document.getElementById("resultado-jogo");
-
-  area.innerHTML = "";
-  resultado.innerHTML = "";
-
-  const circulo = document.createElement("div");
-  circulo.classList.add("circulo");
-
-  circulo.style.top = Math.random() * 240 + "px";
-  circulo.style.left = Math.random() * (area.offsetWidth - 60) + "px";
-
-  circulo.onclick = function() {
-    const tempoFinal = Date.now() - tempoInicio;
-    resultado.innerHTML = `⏱ Seu tempo de reação: <b>${tempoFinal} ms</b>`;
-    circulo.remove();
-  };
-
-  area.appendChild(circulo);
-
-  const atraso = Math.random() * 2000 + 500;
-
-  setTimeout(() => {
-    circulo.style.display = "block";
-    tempoInicio = Date.now();
-  }, atraso);
+// Alternar áreas
+function showSection(id) {
+  document.querySelectorAll(".conteudo").forEach(div => {
+    div.style.display = "none";
+  });
+  document.getElementById(id).style.display = "block";
 }
+
+// MINI-JOGO
+let startBtn = document.getElementById("startGame");
+let clickBtn = document.getElementById("clickBtn");
+let msg = document.getElementById("gameMsg");
+
+let startTime = 0;
+let timeout;
+
+startBtn.addEventListener("click", () => {
+  msg.innerText = "Espere...";
+  clickBtn.disabled = true;
+  clickBtn.style.background = "#444";
+
+  let wait = Math.random() * 3000 + 1500;
+
+  timeout = setTimeout(() => {
+    msg.innerText = "CLIQUE AGORA!";
+    clickBtn.style.background = "green";
+    clickBtn.disabled = false;
+    startTime = Date.now();
+  }, wait);
+});
+
+clickBtn.addEventListener("click", () => {
+  if (clickBtn.disabled) return;
+
+  let reaction = Date.now() - startTime;
+
+  msg.innerText = "Seu tempo de reação: " + reaction + " ms";
+
+  clickBtn.disabled = true;
+  clickBtn.style.background = "#444";
+  clearTimeout(timeout);
+});
+
+
