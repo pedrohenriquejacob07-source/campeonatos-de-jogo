@@ -1,0 +1,113 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+body{background:#000;color:#fff;}
+
+header{background:#111;padding:15px;box-shadow:0 0 10px orange;}
+
+nav ul{display:flex;gap:20px;list-style:none;}
+
+nav ul li a{
+color:orange;
+text-decoration:none;
+font-weight:bold;
+padding:6px 10px;
+border-radius:5px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+background:green;
+color:black;
+}
+
+.home, .pag{
+padding:40px;
+text-align:center;
+}
+
+.home h1{color:orange;font-size:40px;}
+
+.pag img{
+width:400px;
+border-radius:10px;
+margin:20px 0;
+box-shadow:0 0 10px green;
+}
+
+footer{
+margin-top:40px;
+text-align:center;
+padding:10px;
+background:#111;
+color:orange;
+}
+
+.imagens{
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+  border: 2px;
+  box-shadow: 0 4px 12px;
+}
+/* FORMULÁRIO */
+form {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #470000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+}
+
+.formulario-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.formulario-campo input,
+.formulario-campo select,
+.formulario-campo textarea {
+    padding: 10px;
+    background-color: #1a0000;
+    border: 1px solid #470000;
+    border-radius: 5px;
+    color: #ff4d4d;
+}
+
+textarea {
+    height: 120px;
+}
+
+/* BOTÃO */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #680000;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 12px #ff0000;
+}
+
+/* CAIXAS DE TEXTO / SEÇÕES */
+.atividade-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(10, 0, 0, 0.7);
+    border-radius: 10px;
+    border: 2px solid #3a0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+    color: #b30000;
+}

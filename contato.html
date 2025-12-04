@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="fiz.css">
+    <title>Contato</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="valorant.html">Valorant</a></li>
+                <li><a href="freefire.html">Free Fire</a></li>
+                <li><a href="cs.html">CS</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <form action="">
-        <div class="formulario-campo">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-        </div>
-        <div class="formulario-campo">
-            <label for="assunto">Assunto</label>
-            <select name="assunto" id="assunto">
-                <option value="contato">Deixe sua mensagem</option>
-                <option value="nova atividade">Proposta de conteúdo</option>
-                <option value="reclamacao">Reclamação</option>
-            </select>
-        </div>
-        <div class="formulario-campo">
-            <label for="mensagem">Texto</label>
-            <textarea name="mensagem" id="mensagem"></textarea>
-        </div>
-        <button type="submit" class="button" id="enviar-btn">Enviar</button>
-    </form>
-    <script src="apa.js"></script>
+
+<h1>Fale Conosco</h1>
+
+<form id="contato-form">
+    <div class="formulario-campo">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+    </div>
+
+    <div class="formulario-campo">
+        <label for="assunto">Assunto:</label>
+        <select id="assunto" name="assunto">
+            <option value="contato">Deixe sua mensagem</option>
+            <option value="trabalho">Proposta de trabalho</option>
+            <option value="reclamacao">Reclamação</option>
+        </select>
+    </div>
+
+    <div class="formulario-campo">
+        <label for="mensagem">Texto:</label>
+        <textarea id="mensagem" name="mensagem"></textarea>
+    </div>
+
+    <button type="submit" id="enviar-btn">Enviar</button>
+</form>
+
+<script src="java/scrpit.js"></script>
 </body>
-
 </html>
